@@ -15,12 +15,14 @@ class MainActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        //membuat binding
         super.onCreate(savedInstanceState)
         title = " "
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         with(binding) {
+            //Adapter ini digunakan untuk mengelola tampilan tab dan kontennya.
             viewPager.adapter = TabAdapter(this@MainActivity)
             viewPager2 = viewPager
 
@@ -30,6 +32,7 @@ class MainActivity : AppCompatActivity() {
                     1 -> "Login"
                     else -> ""
                 }
+                //menghubungkan mediator yang telah dikonfigurasi dengan TabLayout dan ViewPager2
             }.attach()
 
             viewPager2a = viewPager2
